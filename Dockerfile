@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Install dependencies for psycopg2 and system utilities
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y dnsutils libpq-dev python3-dev && \
+    apt-get install --no-install-recommends -y dnsutils libpq-dev python3-dev build-essential && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -14,8 +14,11 @@ RUN apt-get update && \
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Upgrade pip and install Python dependencies
-RUN python -m pip install --no-cache-dir pip==22.0.4
+# Upgrade pip
+RUN python -m pip install --no-cache-dir --upgrade pip==22.0.4
+
+# Debug: Check if requirements.txt exists
+RUN ls -la /app
 
 # Copy requirements.txt and install dependencies
 COPY requirements.txt /app/
