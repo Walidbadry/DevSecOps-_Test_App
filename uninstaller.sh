@@ -54,7 +54,7 @@ uninstall_python_pip(){
 }
 
 
-# deleting pygoat files
+# deleting pygoat files jbnjj
 uninstall_pygoat(){
   read -p "Would you like to remove all pygoat directories and files? (y/N) " user_choice
   if [ "$user_choice" == 'y' ] || [ "$user_choice" == 'Y' ]; then
@@ -65,7 +65,7 @@ uninstall_pygoat(){
       rm -rfv "$curr_folder"
       echo -e "$HIGHLIGHT_PINK $curr_folder has been deleted $HIGHLIGHT_END"
     else
-      echo -e "$HIGHLIGHT_CYAN $curr_folder kept intact $HIGHLIGHT_END"
+      echo -e "$HIGHLIGHT_CYAN $curr_folder kept intact $HIGHLIGHT_END" 
     fi
 
   else
