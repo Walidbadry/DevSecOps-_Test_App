@@ -17,14 +17,14 @@ jobs:
         with:
           fetch-depth: 0  # Disable shallow clones to ensure full history is available for analysis
 
-      # Step 2: SonarQube Scan
-      - name: Run SonarQube scan
+      # Step 2: Run SonarQube scan with debug logging
+      - name: Run SonarQube scan with debug logging
         uses: sonarsource/sonarqube-scan-action@v3
         with:
-          # These are the parameters for SonarQube analysis
           sonar-project-key: my-node-app  # Replace with your project key
           sonar-host-url: ${{ secrets.SONAR_HOST_URL }}
           sonar-login: ${{ secrets.SONAR_TOKEN }}
+          sonar.verbose: true  # Enable debug logging for SonarQube scanner
 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Set secret for the token (authentication)
