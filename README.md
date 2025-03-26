@@ -10,15 +10,6 @@ our roadmap build intentionally vuln web Application in django. The Vulnerabilit
 Table of Contents
 =================
 
-* [pygoat](#pygoat)
-   * [Installation](#installation)
-      * [From Sources](#from-sources)
-      * [Docker Container](#docker-container)
-      * [Installation Video](#installation-video)
-   * [Uninstallation](#uninstallation)
-   * [Solutions](/Solutions/solution.md)
-   * [For Developers](/docs/dev_guide.md)
-
 ## Installation
 
 ### From Sources
@@ -28,7 +19,7 @@ To setup the project on your local machine:
 
 First, Clone the repository using GitHub website or git in Terminal
 ```
-  git clone https://github.com/adeyosemanputra/pygoat.git
+  git clone 
   ### To Download a specific branch
   git clone -b <branch_name> https://github.com/adeyosemanputra/pygoat.git
 ```
