@@ -1,95 +1,174 @@
+# 🚀 DevSecOps Test App
 
+A deliberately vulnerable web application built with **Django** to help developers and DevOps engineers practice **DevSecOps principles**, security testing, and secure CI/CD pipelines.
 
-## Installation
+---
 
-### From Sources
+## 📌 Overview
 
-To setup the project on your local machine:
-<br>
+This project simulates real-world web vulnerabilities so you can:
 
-First, Clone the repository using GitHub website or git in Terminal
-```
-  git clone 
-  ### To Download a specific branch
-  git clone -b <branch_name> https://github.com/adeyosemanputra/pygoat.git
-```
+* Practice identifying security flaws
+* Learn OWASP Top 10 vulnerabilities
+* Integrate security into DevOps workflows
+* Test SAST, DAST, and container scanning tools
 
-#### Method 1
+---
 
-1. Install all app and python requirements using installer file - `bash installer.sh`
-2. Apply the migrations `python3 manage.py migrate`.<br>
-3. Finally, run the development server `python3 manage.py runserver`.<br>
-4. The project will be available at <http://127.0.0.1:8000> 
+## 🛠️ Tech Stack
 
-#### Method 2
+* Python 3
+* Django
+* Docker & Docker Compose
+* HTML / CSS / JavaScript
 
-1. Install python3 requirements `pip install -r requirements.txt`.<br> 
-2. Apply the migrations `python3 manage.py migrate`.<br>
-3. Finally, run the development server `python3 manage.py runserver`.<br>
-4. The project will be available at <http://127.0.0.1:8000> 
+---
 
-#### Method 3
+## ⚙️ Installation
 
-1. Install all app and python requirements using `setup.py` file - `pip3 install .`
-2. Apply the migrations `python3 manage.py migrate`.<br>
-3. Finally, run the development server `python3 manage.py runserver`.<br>
-4. The project will be available at <http://127.0.0.1:8000> 
+### 🔹 Method 1: Quick Setup (Recommended)
 
-### Docker Container
-1. Install [Docker](https://www.docker.com)
-2. Run `docker pull pygoat/pygoat` or `docker pull pygoat/pygoat:latest`
-3. Run `docker run --rm -p 8000:8000 pygoat/pygoat:latest`
-4. Browse to <http://127.0.0.1:8000> 
-5. Remove existing image using `docker image rm pygoat/pygoat` and pull again incase of any error
-
-### From Docker-Compose 
-1. Install [Docker](https://www.docker.com)
-2. Run `docker-compose up` or `docker-compose up -d`
-
-### Build Docker Image and Run
-1. Clone the repository  &ensp; `git clone https://github.com/adeyosemanputra/pygoat.git` 
-2. Build the docker image from Dockerfile using &ensp; `docker build -f Dockerfile -t pygoat .`
-3. Run the docker image &ensp;`docker run --rm -p 8000:8000 pygoat:latest`
-4. Browse to <http://127.0.0.1:8000> or <http://0.0.0.0:8000> 
-
-### Installation video 
-
-1. From Source using `installer.sh`
- - [Installing PyGoat from Source](https://www.youtube.com/watch?v=7bYBJXG3FRQ)
-2. Without using `installer.sh`
- - [![](http://img.youtube.com/vi/rfzQiMeiwso/0.jpg)](http://www.youtube.com/watch?v=rfzQiMeiwso "Installation Pygoat")
-
-## Uninstallation
-
-### On Debian/Ubuntu Based Systems
-- On Debian/Ubuntu based systems, you can use the `uninstaller.sh` script to uninstall `pygoat` along with all it's dependencies.
-- To uninstall `pygoat`, simply run:
 ```bash
-$ bash ./uninstaller.sh
+git clone <your-repo-url>
+cd DevSecOps-_Test_App
+
+bash installer.sh
+python3 manage.py migrate
+python3 manage.py runserver
 ```
 
-### On Other Systems
-- On other systems, you can use the `uninstaller.py` script to uninstall `pygoat` along with all it's dependencies
-- To uninstall `pygoat`, simply run:
+Open your browser:
+
+```
+http://127.0.0.1:8000
+```
+
+---
+
+### 🔹 Method 2: Manual Installation
+
 ```bash
-$ python3 uninstaller.py
+git clone <your-repo-url>
+cd DevSecOps-_Test_App
+
+pip install -r requirements.txt
+python3 manage.py migrate
+python3 manage.py runserver
 ```
 
-## Solutions 
-<a href="/Solutions/solution.md">Solutions to all challenges</a>
+---
 
-## Contributors ✨
+### 🔹 Method 3: Using setup.py
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+```bash
+pip3 install .
+python3 manage.py migrate
+python3 manage.py runserver
+```
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+---
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+## 🐳 Docker Setup
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+### Run with Docker
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
-# DevSecOps-_Test_App
+```bash
+docker pull pygoat/pygoat:latest
+docker run --rm -p 8000:8000 pygoat/pygoat:latest
+```
+
+---
+
+### Run with Docker Compose
+
+```bash
+docker-compose up
+```
+
+Run in background:
+
+```bash
+docker-compose up -d
+```
+
+---
+
+### Build Locally
+
+```bash
+git clone https://github.com/adeyosemanputra/pygoat.git
+cd pygoat
+
+docker build -t pygoat .
+docker run --rm -p 8000:8000 pygoat
+```
+
+---
+
+## 📂 Project Structure
+
+```
+.
+├── chatbot/           # Chatbot functionality
+├── pygoat/            # Main vulnerable application
+├── docs/              # Documentation
+├── Solutions/         # Challenge solutions
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+```
+
+---
+
+## 🧪 Learning Goals
+
+* Web application security fundamentals
+* OWASP Top 10 vulnerabilities
+* DevSecOps practices
+* Security tools integration (SAST / DAST)
+* Container security
+
+---
+
+## ❌ Uninstallation
+
+### Linux (Debian/Ubuntu)
+
+```bash
+bash ./uninstaller.sh
+```
+
+### Other Systems
+
+```bash
+python3 uninstaller.py
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+
+Steps:
+
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+## ⚠️ Disclaimer
+
+This application contains intentional security vulnerabilities for **educational purposes only**.
+
+**Do NOT use in production environments.**
+
+---
+
+## 👨‍💻 Author
+
+Walid Badry
+
+---
